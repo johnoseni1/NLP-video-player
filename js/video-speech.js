@@ -5,7 +5,7 @@
 	var startRecBtn = document.getElementById('startRecBtn');
 	var stopRecBtn = document.getElementById('stopRecBtn');
 	var video_count = 1;
-	 var videoPlayer = document.getElementById("sec-video");
+	var nextVideo = document.getElementById("sec-video");
 
 	// Define a new speech recognition instance
 	var rec = null;
@@ -59,6 +59,7 @@
 		       				if (userSaid(str, 'replay')) {
 		       					video.currentTime = 0;
 		       					video.play();
+								nextVideo.pause();
 		       					highlightCommand('vidReplay');
 		       				}
 		       				// Play the video
@@ -78,6 +79,7 @@
 		       				// Stop the video
 		       				else if (userSaid(str, 'stop')) {
 		       					video.pause();
+								nextVideo.pause();
 		       					highlightCommand('vidStop');
 		       				}
 		       				// If the user said 'volume' then parse it even further
