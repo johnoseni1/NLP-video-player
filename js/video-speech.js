@@ -71,8 +71,8 @@
 								video_count++;
 								if (video_count == 16) video_count = 1;
 								var nextVideo = document.getElementById("sec-video");
-								video.stop();
 								nextVideo.play();
+								video.pause();
 								highlightCommand('vidNext');
 							}
 		       				// Stop the video
