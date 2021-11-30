@@ -70,9 +70,8 @@
 							   else if (userSaid(str, 'next')) {
 								video_count++;
 								if (video_count == 16) video_count = 1;
-								var nextVideo = "video"+video_count+".mp4";
-								videoPlayer.src = nextVideo;
-								videoPlayer.play();
+								var nextVideo = document.getElementById("sec-video");
+								nextVideo.play();
 								highlightCommand('vidNext');
 							}
 		       				// Stop the video
