@@ -15,7 +15,7 @@
 		<video id="v" controls preload="metadata">
 			<source src="video/big-buck-bunny.mp4" type="video/mp4">
 		</video><br />
-		<video id="sec-video" controls preload="metadata">
+		<video id="sec-video" style="display: none;" controls preload="metadata">
 			<source src="video/big-buck-bunny2.mp4" type="video/mp4">
 		</video>
 		<div class="rec-status">Recogniser status:<span id="recStatus">not recognising</span></div>
@@ -23,20 +23,20 @@
 		<button id="stopRecBtn">Stop Recognition</button>
 		<p>Click "Start Recognition", give microphone access permission and start controlling the video's playback, mute and volume control via speech.<br>Available commands are:</p>
 		<ul>
-			<li id="vidPlay">"video play"</li>
-			<li id="vidPlayNext">"video play Next"</li>
-			<li id="vidStop">"video stop"</li>
-			<li id="vidStopNext">"video stop Next"</li>
-			<li id="vidNext">"video Next"</li>
-			<li id="vidReplay">"video replay"</li>
-			<li id="vidVolOn">"video volume on"</li>
-			<li id="vidVolOnNext">"video volume on Next"</li>
-			<li id="vidVolOff">"video volume off"</li>
-			<li id="vidVolOffNext">"video volume off Next"</li>
-			<li id="vidVolInc">"video volume increase"</li>
-			<li id="vidVolIncNext">"video volume increase Next"</li>
-			<li id="vidVolDec">"video volume decrease "</li>
-			<li id="vidVolDecNext">"video volume decrease Next"</li>
+			<li id="vidPlay">" play"</li>
+			<li id="vidPlayNext">" play Next"</li>
+			<li id="vidStop">" stop"</li>
+			<li id="vidStopNext">" stop Next"</li>
+			<li id="vidNext">" Next"</li>
+			<li id="vidReplay">" replay"</li>
+			<li id="vidVolOn">" volume on"</li>
+			<li id="vidVolOnNext">"vvolume on Next"</li>
+			<li id="vidVolOff">" volume off"</li>
+			<li id="vidVolOffNext">" volume off Next"</li>
+			<li id="vidVolInc">" volume increase"</li>
+			<li id="vidVolIncNext">" volume increase Next"</li>
+			<li id="vidVolDec">" volume decrease "</li>
+			<li id="vidVolDecNext">" volume decrease Next"</li>
 		</ul>
 	</main>
 	<script src="js/video-speech.js" defer></script>

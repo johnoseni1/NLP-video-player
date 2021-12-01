@@ -1,0 +1,67 @@
+<!DOCTYPE html<!DOCTYPE html>
+<html>
+  <head>
+    <title>Currency Converter in Javascript</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+   <style>
+       .output{
+           display: block;
+           width: 80%;
+           height: 400px;
+           margin: 50px auto;
+       }
+   </style>
+  </head>
+  <body>
+
+    <button class="btn-start">Start Recognising</button>
+
+    <button class="btn-end">Stop recognising</button>
+
+    <textarea class="output"></textarea>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script >
+
+
+    class speechRecognitionApi{
+        constructor(options) {
+            const SpeechToText = window.speechRecognition || window.webkitSpeechRecognition;
+            this.speechApi = new SpeechToText();
+            this.output = options.output ? options.output : document.createElement("div");
+            this.speechApi.continuous = true; 
+            this.speechApi.interimResult = false;
+            this.speechApi.onresult = (event) => {
+                var resultIndex = event.resultIndex;
+                var transcript = event.results[resultIndex][0].transcript;
+                this.output.textContent = transcript;
+            }
+        }
+        init() {
+            this.speechApi.start();
+        }
+        stop() {
+            this.speechApi.stop();
+        }
+    }
+    window.onload = function () {
+        var speech = new speechRecognitionApi({
+            output: document.querySelector(".output")
+        })
+
+        document.querySelector(".btn-start").addEventListener("click", () => {
+            speech.init();
+        })
+        document.querySelector(".btn-end").addEventListener("click", () => {
+            speech.stop();
+        })
+    }
+
+  </script>
+
+</body>
+</html>

@@ -54,9 +54,9 @@
 		       			var str = e.results[i][0].transcript;
 		       			console.log('Recognised: ' + str);
 		       			// If the user said 'video' then parse it further
-		       			if (userSaid(str, 'video')) {
 		       				// Replay the video
 		       				if (userSaid(str, 'replay')) {
+								var nextVideo = document.getElementById("sec-video");
 		       					video.currentTime = 0;
 		       					video.play();
 								nextVideo.pause();
@@ -68,11 +68,13 @@
 		       					highlightCommand('vidPlay');
 		       				}
 							   else if (userSaid(str, 'play Next')) {
+								var nextVideo = document.getElementById("sec-video");
 								nextVideo.play();
 								highlightCommand('vidPlayNext');
 							}
 							   //Go to the next video
 							   else if (userSaid(str, 'next')) {
+								document.getElementById("sec-video").style.display="block";
 								video_count++;
 								if (video_count == 16) video_count = 1;
 								var nextVideo = document.getElementById("sec-video");
@@ -82,12 +84,14 @@
 							}
 		       				// Stop the video
 		       				else if (userSaid(str, 'stop')) {
+								var nextVideo = document.getElementById("sec-video");
+								nextVideo.pause();
 								video.pause();
 		       					highlightCommand('vidStop');
 		       				}
 
 							   else if (userSaid(str, 'stop Next')) {
-								// var nextVideo = document.getElementById("sec-video");
+								var nextVideo = document.getElementById("sec-video");
 								nextVideo.pause();
 		       					highlightCommand('vidStopNext');
 		       				}
@@ -136,7 +140,7 @@
 									highlightCommand('vidVolOnNext');
 								}
 		       				}
-		       			}
+		       			
 	       			}
 	        	}
 	    	}
